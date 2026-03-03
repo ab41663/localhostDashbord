@@ -1,0 +1,14 @@
+{
+    "name": "ls-manager-root",
+    "version": "1.0.0",
+    "description": "LocalStack Manager Root",
+    "scripts": {
+        "start:server": "cd server && npx nodemon server.js",
+        "start:client": "cd client && npm run dev",
+        "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
+        "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1"
+    }
+}

@@ -1,0 +1,440 @@
+:root {
+    /* AWS Colors */
+    --aws-squid-ink: #232f3e;
+    --aws-smile: #ff9900;
+    --aws-blue: #0073bb;
+    --aws-bg: #f2f3f3;
+    --aws-border: #eaeded;
+    --aws-text-primary: #16191f;
+    --aws-text-secondary: #545b64;
+    --aws-white: #ffffff;
+    --aws-hover: #fafafa;
+    --aws-success: #1d8102;
+    --aws-error: #d13212;
+
+    /* Legacy variables for backwards compatibility with components if needed */
+    --bg-primary: var(--aws-bg);
+    --bg-secondary: var(--aws-white);
+    --accent-primary: var(--aws-smile);
+    --accent-secondary: var(--aws-blue);
+    --text-primary: var(--aws-text-primary);
+    --text-secondary: var(--aws-text-secondary);
+    --glass-bg: var(--aws-white);
+    --glass-border: var(--aws-border);
+    --success: var(--aws-success);
+    --error: var(--aws-error);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--aws-bg);
+    color: var(--aws-text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* AWS Top Nav */
+.aws-top-nav {
+    background-color: var(--aws-squid-ink);
+    color: var(--aws-white);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.aws-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.aws-logo-area span {
+    color: var(--aws-smile);
+    font-size: 1.4rem;
+    margin-right: 4px;
+}
+
+.aws-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 13px;
+}
+
+.aws-nav-item {
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.aws-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    margin-top: 40px;
+    min-height: calc(100vh - 40px);
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--aws-white);
+    border-right: 1px solid var(--aws-border);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sidebar-title {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--aws-border);
+    background: var(--aws-bg);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    color: var(--aws-text-primary);
+    font-size: 14px;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: var(--aws-hover);
+}
+
+.nav-item.active {
+    background: #e6f6f4;
+    color: #0073bb;
+    border-left: 3px solid var(--aws-smile);
+    font-weight: 600;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    margin-left: 250px;
+    min-width: 0;
+}
+
+/* AWS Dashboard Title */
+.aws-page-header {
+    margin-bottom: 1.5rem;
+}
+
+.aws-page-header h2 {
+    font-size: 24px;
+    font-weight: normal;
+    color: var(--aws-text-primary);
+}
+
+/* AWS Widgets Grid */
+.aws-widget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Cards / Widgets */
+.card,
+.aws-widget {
+    background: var(--aws-white);
+    border: 1px solid var(--aws-border);
+    border-radius: 4px;
+    padding: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .03), 1px 1px 1px 0 rgba(0, 28, 36, .03), -1px 1px 1px 0 rgba(0, 28, 36, .03);
+    margin-bottom: 1.5rem;
+}
+
+.card-header,
+.aws-widget-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--aws-border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--aws-white);
+    border-radius: 4px 4px 0 0;
+}
+
+.card-title,
+.aws-widget-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--aws-text-primary);
+}
+
+.card-content,
+.aws-widget-content {
+    padding: 1.5rem;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    text-align: left;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 2px solid var(--aws-border);
+    color: var(--aws-text-secondary);
+    font-weight: bold;
+    background: #fafafa;
+}
+
+td {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--aws-border);
+    color: var(--aws-text-primary);
+}
+
+tr:hover td {
+    background: var(--aws-hover);
+}
+
+/* Buttons */
+button {
+    background: var(--aws-white);
+    color: var(--aws-text-primary);
+    border: 1px solid var(--aws-text-secondary);
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.1s;
+}
+
+button:hover {
+    background: var(--aws-hover);
+}
+
+button.primary {
+    background: #ec7211;
+    color: white;
+    border: 1px solid #ec7211;
+}
+
+button.primary:hover {
+    background: #eb5f07;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+    background: var(--aws-white);
+    border: 1px solid #aab7b8;
+    color: var(--aws-text-primary);
+    padding: 0.4rem 0.5rem;
+    border-radius: 2px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--aws-blue);
+    box-shadow: 0 0 0 1px var(--aws-blue);
+}
+
+/* Links */
+a,
+.aws-link {
+    color: var(--aws-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover,
+.aws-link:hover {
+    text-decoration: underline;
+    color: #005276;
+}
+
+/* Utilities */
+.text-error {
+    color: var(--aws-error);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.text-secondary {
+    color: var(--aws-text-secondary);
+}
+
+.badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-success {
+    background: #e3f2fd;
+    color: #0d47a1;
+}
+
+.badge-error {
+    background: #fbe9e7;
+    color: #b71c1c;
+}
+
+.badge-loading {
+    background: #f5f5f5;
+    color: #616161;
+}
+
+.resource-list {
+    list-style: none;
+    padding: 1.5rem;
+}
+
+.resource-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--aws-border);
+    font-size: 14px;
+}
+
+.resource-item:last-child {
+    border-bottom: none;
+}
+
+/* All Services Grid Layout */
+.all-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.service-category h4 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: var(--aws-text-primary);
+    border-bottom: 1px solid var(--aws-border);
+    padding-bottom: 0.5rem;
+}
+
+.service-category ul {
+    list-style: none;
+}
+
+.service-category li {
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+}
+
+.service-category li.disabled {
+    color: var(--aws-text-secondary);
+    cursor: not-allowed;
+}
+
+.service-category li.active {
+    color: var(--aws-blue);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.service-category li.active:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-container {
+    background: var(--aws-white);
+    width: 650px;
+    max-width: 95%;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--aws-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--aws-text-primary);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--aws-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    background: #fafafa;
+}
+
+.modal-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--aws-text-secondary);
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--aws-text-primary);
+}
