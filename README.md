@@ -1,12 +1,16 @@
 # LocalStack Manager Dashboard 🚀
 
-A premium, modern web dashboard to manage your LocalStack services (S3, SQS, DynamoDB, IAM, SES, KMS).
+A premium, modern web dashboard to manage your LocalStack services (S3, SQS, DynamoDB, IAM, KMS).
 
 ## 🌟 Features
-- **Modern UI**: Sleek dark mode with glassmorphism effects.
-- **Service Management**: List and view resources across 6 core AWS services.
+- **Modern UI**: Sleek AWS-inspired design with premium aesthetics and responsive layouts.
+- **Service Management**: Full management for **S3, SQS, DynamoDB, IAM, and SSM**.
+- **DynamoDB JSON Editor**: Create and edit items using a professional JSON modal with multiline support.
+- **Smart Search**: Find DynamoDB items by searching any attribute with automatic type detection (String/Number/Boolean).
+- **Sticky Actions**: Consistent action toolbars and selection models for better readability of wide datasets.
+- **IAM Details**: Deep-dive into IAM roles and policy JSON directly from the console.
 - **Dynamic Config**: Automatically detects and displays your active AWS region and LocalStack endpoint.
-- **Flexible Deployment**: Run via Docker Compose or locally with Node.js.
+- **Deployment**: Local and Docker-ready for any development environment.
 
 ---
 
@@ -48,9 +52,9 @@ If you prefer running it locally without a Docker image for the manager:
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend**: React, Vite, Framer Motion, Lucide Icons.
-- **Backend**: Node.js, Express, AWS SDK v2.
-- **Styling**: Vanilla CSS (Premium Design System).
+- **Frontend**: React, Vite, Framer Motion, AWS SVG Architecture Icons.
+- **Backend**: Node.js, Express, AWS SDK v2, DynamoDB Document Client.
+- **Styling**: Vanilla CSS (AWS Design System).
 
 ## 📝 Verification
 To see resources in the dashboard, create some in LocalStack first:
