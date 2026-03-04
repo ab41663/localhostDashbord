@@ -237,6 +237,9 @@ function App() {
                     )}
                 </main>
             </div>
+            <footer style={{ padding: '0.5rem 1rem', borderTop: '1px solid var(--aws-border)', color: 'var(--aws-text-secondary)', fontSize: '11px', textAlign: 'right', background: 'var(--aws-white)' }}>
+                v1.0.1 (Security Patched)
+            </footer>
         </div>
     );
 }
